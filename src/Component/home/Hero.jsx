@@ -1,39 +1,30 @@
 import React from "react";
-import HeroImage from "../../assets/heroimage.png";
-import BackgroudnImg from "../../assets/heroImage.png";
+import Background from "../../assets/background.png";
 
 const Hero = () => {
   return (
-    <section className=" bg-[#FFD4D0] px-7 pt-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 ">
-        <div className="flex items-center justify-center">
-          <div className="space-y-6 text-center md:text-left sm:space-x-0">
-            <p>UX Designer</p>
-            <h1 className="text-[48px] font-bold">
-              Hi There, I’m <br />
-              <span className="text-red-500">John Smith</span>
-            </h1>
-            <p>
-              Welcome to my portfolio of captivating digital
-              <br /> experiences. Explore my work and let's create something
-              <br />
-              extraordinary together.
-            </p>
-            <div className="space-x-5">
-              <button className="py-3 px-6 bg-black text-white text-xl font-bold">
-                <a href="/shop">Hire Me</a>
-              </button>
-              <button className="py-3 px-6 border border-black text-xl">
-                <a href="/shop">Portfolio</a>
-              </button>
-            </div>
+   
+      <div className="bg-cover md:min-h-screen max-h-130 flex items-center pb-10 h-screen relative"
+        style={{ backgroundImage: `url(${Background})` }}
+      >
+        <div className="container mx-auto px-4 space-y-7 text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-[58px] font-bold leading-tight md:max-w-3xl mx-auto md:mx-0">
+            EMPOWER YOUR BUSINESS
+          </h2>
+          <p className="text-base sm:text-lg md:text-lg md:max-w-3xl mx-auto md:mx-0">
+            We know how large objects will act, but things on a small scale.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center sm:justify-start items-center sm:items-start">
+            <button className="cursor-pointer py-2 px-4 bg-[#FFA62B] text-white text-lg rounded-full w-[185px] h-[48px]">
+              Get Quote Now
+            </button>
+            <button className="cursor-pointer py-2 px-4 border border-gray-700 text-lg rounded-full w-[185px] h-[48px]">
+              Learn More
+            </button>
           </div>
         </div>
-        <div>
-          <img src={HeroImage} alt="header" className="bg-cover mx-auto md:h-[500px] mt-4" />
-        </div>
       </div>
-    </section>
+   
   );
 };
 

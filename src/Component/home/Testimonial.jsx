@@ -1,89 +1,59 @@
-import React, { useState, useEffect } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-
-const testimonials = [
-  {
-    text: "Sara Jones’s designs are both visually captivating and highly effective. She transformed our website, enhancing user engagement and conversions. Highly recommended!",
-    name: "John Smith",
-    position: "CEO of XYZ Company",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    text: "Emily's creative approach brought our brand to life. Her attention to detail and ability to understand our vision was truly outstanding.",
-    name: "Emily Johnson",
-    position: "Marketing Director at ABC Corp",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    text: "David's UI/UX designs have significantly improved user experience on our platform. His work speaks for itself!",
-    name: "David Brown",
-    position: "Product Manager at TechWorld",
-    image: "https://randomuser.me/api/portraits/men/50.jpg",
-  },
-];
+import React from "react";
+import TestImage from "../../assets/member-2.png";
 
 const Testimonial = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-slide effect (changes every 4 seconds)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextTestimonial();
-    },5000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
-  const nextTestimonial = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevTestimonial = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
+  const testimonials = [
+    {
+      name: "Regina Miles",
+      role: "Belgner",
+      content:
+        "In proved to be impossible using the traditional concepts of space and time, Einstein developed a new view of time first and then space. This proved be impossible using the traditional concepts of space and time. Einstein developed a new view of time first and then space.",
+    },
+    {
+      name: "Regina Miles",
+      role: "Designer",
+      content:
+        "This proved to be impossible using the traditional concepts of space and time. Einstein developed a new view of time first and then space. This proved to be impossible using the traditional concepts of space and time. Einstein developed a new view of time first and then space.",
+    },
+    {
+      name: "Regina Miles",
+      role: "Designer",
+      content:
+        "This proved to be impossible using the concepts of space and time. Einstein developed a new view of time first and then space. To be impossible using the traditional concepts of space and time, Einstein developed a new view of time first and then space.",
+    },
+  ];
 
   return (
-    <div className="bg-red-100 py-16 px-6 text-center relative overflow-hidden">
-      {/* Half-Shown Top Decorative Circle */}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 bg-red-500 w-20 h-10 rounded-b-full"></div>
-
-      {/* Testimonial Content */}
-      <h2 className="text-3xl font-bold mb-4">Testimonials</h2>
-      <p className="max-w-2xl mx-auto text-gray-700 mb-6 transition-all duration-500">
-        {testimonials[currentIndex].text}
-      </p>
-
-      {/* Profile Section */}
-      <div className="flex items-center justify-center gap-3">
-        <img
-          src={testimonials[currentIndex].image}
-          alt={testimonials[currentIndex].name}
-          className="w-10 h-10 rounded-full border-2 border-white shadow-md img2"
-        />
-        <p className="text-md font-semibold">
-          {testimonials[currentIndex].name}{" "}
-          <span className="text-gray-600">
-            / {testimonials[currentIndex].position}
-          </span>
+    <div className="bg-[#16697A] py-20 mt-10">
+      <div className="w-full max-w-4xl mx-auto pt-10 text-white space-y-4 text-center px-4">
+        <h2 className="text-3xl font-bold">What Clients Say</h2>
+        <p className="text-sm">
+          Problems trying to resolve the conflict between
+          <br />
+          the two major realms of Classical physics Newtonian mechanics
         </p>
       </div>
 
-      {/* Navigation Arrows */}
-      <div
-        onClick={prevTestimonial}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
-      >
-        <FaChevronLeft size={24} />
-      </div>
-      <div
-        onClick={nextTestimonial}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-600"
-      >
-        <FaChevronRight size={24} />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 px-4 max-w-7xl mx-auto space-x-12">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg p-6 pl-10 relative pt-16  shadow-lg"
+          >
+            <div className="absolute top-3 -left-7 ">
+              <img
+                src={TestImage}
+                alt="Client"
+                className="w-20 h-20 rounded-full border-4 border-white shadow-md"
+              />
+            </div>
+            <h3 className="mt-4 font-bold text-lg">{testimonial.name}</h3>
+            <span className="text-sm text-gray-500 font-bold">
+              {testimonial.role}
+            </span>
+            <p className="text-sm mt-4 text-gray-700">{testimonial.content}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

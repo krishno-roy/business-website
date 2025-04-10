@@ -1,29 +1,23 @@
 import React from 'react'
 import Hero from './Hero'
-import Service from "./Serviec";
-import About from './About'
-import Portfolio from './Portfolio';
-import Testimonial from './Testimonial';
-import BlogSection from './Blog';
-import ContactForm from './ContactForm';
-import Footer from './Footer';
-import Skill from './Skill';
+import ChooseUs from '../ChooseUs'
+import Serviec from './Serviec'
+import Team from './Team'
+import Contact from './Contact'
+import Testimonial from './Testimonial'
 
 
 const Home = () => {
   return (
-    <div>
-      <Hero/>
-      <About/>
-      <Service/>
-      <Portfolio/>
-      <Skill/>
-      <Testimonial/>
-      <BlogSection/>
-      <ContactForm/>
-      <Footer/>
+    <div className="">
+      <Hero />
+      <ChooseUs />
+      <Serviec />
+      <Testimonial />
+      <Team />
+      <Contact />
     </div>
-  )
+  );
 }
 
 export default Home

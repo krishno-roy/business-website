@@ -46,11 +46,15 @@ nav {
   color: var(--primary-color);
 }
 
-.img {
-    width: 12% !important;
-    height: 21%;
+.team-img{
+  width: 43% !important;
 }
-.img2 {
-    width: 6% !important;
-    height: 21%;
+
+.serviceimg{
+  width: 90%;
+}
+
+.temimonialimg{
+    height: 27%;
+    width: 16%;
 }
